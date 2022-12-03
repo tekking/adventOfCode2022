@@ -1,6 +1,10 @@
-﻿using AdventOfCode2022.Day2;
+﻿using AdventOfCode2022.Day3;
 
 Console.WriteLine("Hello, World!");
 
-new Day2().ExecutePart1();
-new Day2().ExecutePart2();
+var day = new Day3();
+
+day.TestFirstPart();
+day.ExecuteFirstPart();
+day.TestSecondPart();
+day.ExecuteSecondPart();

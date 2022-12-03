@@ -2,19 +2,29 @@
 {
     public abstract class BaseDay
     {
-        public void ExecutePart1()
+        public void ExecuteFirstPart()
         {
-            this.SolvePart1(this.GetInput(), this.GetExampleInput());
+            this.SolvePart1(this.GetInput());
         }
 
-        public void ExecutePart2()
+        public void TestFirstPart()
         {
-            this.SolvePart2(this.GetInput(), this.GetExampleInput());
+            this.SolvePart1(this.GetExampleInput());
         }
 
-        protected abstract void SolvePart1(string[] input, string[] example);
+        public void ExecuteSecondPart()
+        {
+            this.SolvePart2(this.GetInput());
+        }
 
-        protected abstract void SolvePart2(string[] input, string[] example);
+        public void TestSecondPart()
+        {
+            this.SolvePart2(this.GetExampleInput());
+        }
+
+        protected abstract void SolvePart1(string[] input);
+
+        protected abstract void SolvePart2(string[] input);
 
         protected string[] GetInput()
         {
