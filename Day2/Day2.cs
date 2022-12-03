@@ -4,14 +4,14 @@ namespace AdventOfCode2022.Day2
 {
     internal class Day2 : BaseDay
     {
-        protected override void SolvePart1(string[] input)
+        protected override void SolvePart1(string[] input, string[] example)
         {
             Console.WriteLine(
                 input.Select(this.ScoreRoundPart1)
                      .Sum());
         }
 
-        protected override void SolvePart2(string[] input)
+        protected override void SolvePart2(string[] input, string[] example)
         {
             Console.WriteLine(
                 input.Select(this.ScoreRoundPart2)

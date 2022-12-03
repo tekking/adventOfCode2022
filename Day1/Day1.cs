@@ -4,7 +4,7 @@ namespace AdventOfCode2022.Day1
 {
     internal class Day1 : BaseDay
     {
-        protected override void SolvePart1(string[] input)
+        protected override void SolvePart1(string[] input, string[] example)
         {
             var sums = new List<int>();
             var currentSum = 0;
@@ -26,7 +26,7 @@ namespace AdventOfCode2022.Day1
             Console.WriteLine(sums.Max());
         }
 
-        protected override void SolvePart2(string[] input)
+        protected override void SolvePart2(string[] input, string[] example)
         {
             var sums = new List<int>();
             var currentSum = 0;
