@@ -1,10 +1,12 @@
-﻿using AdventOfCode2022.Day3;
+﻿using AdventOfCode2022.Common;
 
-Console.WriteLine("Hello, World!");
+var mostRecentDay = Activator.CreateInstance(
+    typeof(BaseDay).Assembly.GetTypes()
+                   .Where(t => t.IsSubclassOf(typeof(BaseDay)))
+                   .OrderByDescending(t => int.Parse(t.Name[3..]))
+                   .First()) as BaseDay;
 
-var day = new Day3();
-
-day.TestFirstPart();
-day.ExecuteFirstPart();
-day.TestSecondPart();
-day.ExecuteSecondPart();
+mostRecentDay!.TestFirstPart();
+mostRecentDay.ExecuteFirstPart();
+mostRecentDay.TestSecondPart();
+mostRecentDay.ExecuteSecondPart();
