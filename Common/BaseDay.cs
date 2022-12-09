@@ -9,7 +9,10 @@
 
         public void TestFirstPart()
         {
-            this.SolvePart1(this.GetExampleInput());
+            foreach (var exampleInput in this.GetExampleInputs())
+            {
+                this.SolvePart1(exampleInput);
+            }
         }
 
         public void ExecuteSecondPart()
@@ -19,7 +22,10 @@
 
         public void TestSecondPart()
         {
-            this.SolvePart2(this.GetExampleInput());
+            foreach (var exampleInput in this.GetExampleInputs())
+            {
+                this.SolvePart2(exampleInput);
+            }
         }
 
         protected abstract void SolvePart1(string[] input);
@@ -35,13 +41,15 @@
             return File.ReadAllLines(file);
         }
 
-        protected string[] GetExampleInput()
+        protected string[][] GetExampleInputs()
         {
             var type = this.GetType();
             var folder = type.Namespace!.Split('.')[^1];
 
-            var file = $"{folder}/example.txt";
-            return File.Exists(file) ? File.ReadAllLines(file) : Array.Empty<string>();
+            var files = Directory.GetFiles($"{folder}")
+                                 .Where(p => p.StartsWith($"{folder}\\example")).Order();
+            return files.Select(f => File.ReadAllLines(f))
+                        .ToArray();
         }
     }
 }
