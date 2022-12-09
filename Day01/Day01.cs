@@ -1,8 +1,8 @@
 ﻿using AdventOfCode2022.Common;
 
-namespace AdventOfCode2022.Day1
+namespace AdventOfCode2022.Day01
 {
-    internal class Day1 : BaseDay
+    internal class Day01 : BaseDay
     {
         protected override void SolvePart1(string[] input)
         {
