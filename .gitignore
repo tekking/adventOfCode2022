@@ -312,3 +312,4 @@ cypresstests/*/cypress/integration/cypress
 
 
 *.css
+**/input.txt
